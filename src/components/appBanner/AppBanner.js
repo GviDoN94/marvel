@@ -3,7 +3,7 @@ import avegers from '../../resources/img/Avengers.png'
 import avegersLogo from '../../resources/img/Avengers_logo.png'
 
 const AppBanner = () => {
-    return(
+    return (
         <div className="app__banner">
             <img src={avegers} alt="Avengers"/>
             <div className="app__banner-text">

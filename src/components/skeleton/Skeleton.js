@@ -1,7 +1,7 @@
 import './skeleton.scss';
 
 const Skeleton = () => {
-    return(
+    return (
         <>
             <p className="char__select">Please select a character to see information</p>
             <div className="skeleton">

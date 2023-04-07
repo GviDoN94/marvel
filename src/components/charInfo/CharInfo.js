@@ -2,7 +2,7 @@ import './charInfo.scss';
 import thor from '../../resources/img/thor.jpeg';
 
 const CharInfo = () => {
-    return(
+    return (
         <div className="char__info">
             <div className="char__basics">
                 <img src={thor} alt="thor"/>
