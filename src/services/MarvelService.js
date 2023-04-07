@@ -1,6 +1,6 @@
 class MarvelService {
     _apiBase = 'https://gateway.marvel.com:443/v1/public/';
-    _apiKey = '';
+    _apiKey = 'apikey=c1342aa838289b5b2b2c933847e87d35';
 
     getResource = async (url) => {
         let res = await fetch(url);
@@ -28,6 +28,7 @@ class MarvelService {
 
     _transformCharacter = (char) => {
         return {
+            id: char.id,
             name: char.name,
             description: char.description ?
                 char.description.length > 210 ?
