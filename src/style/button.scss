@@ -8,6 +8,7 @@
     font-size: 14px;
     transition: 0.3s transform;
     border: none;
+    outline: none;
     background-color: transparent;
     cursor: pointer;
 
@@ -102,6 +103,10 @@
     }
 
     &:hover {
+        transform: translateY(-5px);
+    }
+
+    &:focus {
         transform: translateY(-5px);
     }
 
