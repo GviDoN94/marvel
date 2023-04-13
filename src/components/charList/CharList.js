@@ -19,7 +19,8 @@ const CharList = (props) => {
     const marvelService = new MarvelService();
 
     useEffect(() => {
-        onRequest()
+        onRequest();
+        // eslint-disable-next-line
     }, [])
 
     const onRequest = (offset) => {
