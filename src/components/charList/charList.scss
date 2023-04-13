@@ -22,9 +22,12 @@
         background-color: $dark;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, .25);
         padding: 15px;
-        outline: none;
         cursor: pointer;
-        transition: 0.3s transform;
+        transition: 0.3s transform, 0.3s box-shadow;
+
+        &:focus {
+            outline-color: $main-color;
+        }
 
         img {
             width: 200px;
@@ -33,9 +36,10 @@
             transform: translate(-15px, -15px);
         }
 
-        &:focus {
+        &_selected {
             box-shadow: 0 5px 20px $main-color;
             transform: translateY(-8px);
+            outline: none;
         }
     }
 
