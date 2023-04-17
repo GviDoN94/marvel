@@ -8,7 +8,6 @@ import CharInfo from "../charInfo/CharInfo";
 import decoration from '../../resources/img/vision.png';
 
 const MainPage = () => {
-
   const [selectedChar, setChar] = useState(null);
 
   const onCharSelected = (id) => {
