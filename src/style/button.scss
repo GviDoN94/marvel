@@ -112,5 +112,6 @@
 
   &:disabled {
     filter: grayscale(0.5);
+    cursor: auto;
   }
 }
