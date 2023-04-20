@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import AppHeader from "../appHeader/AppHeader";
 import Spinner from "../spinner/Spinner";
@@ -9,21 +10,22 @@ const MainPage = lazy(() => import("../pages/MainPage"));
 const ComicsPage = lazy(() => import("../pages/ComicsPage"));
 
 const App = () => {
+  const location = useLocation();
   return (
-    <Router>
-      <div className="app">
-        <AppHeader />
-        <main>
-          <Suspense fallback={<Spinner />}>
-            <Routes>
+    <div className="app">
+      <AppHeader />
+      <main>
+        <Suspense fallback={<Spinner />}>
+          <AnimatePresence mode="wait" initial={false}>
+            <Routes location={location} key={location.pathname}>
               <Route path="/" element={<MainPage />} />
               <Route path="/comics/*" element={<ComicsPage />} />
               <Route path="*" element={<Page404 />} />
             </Routes>
-          </Suspense>
-        </main>
-      </div>
-    </Router>
+          </AnimatePresence>
+        </Suspense>
+      </main>
+    </div>
   );
 };
 
