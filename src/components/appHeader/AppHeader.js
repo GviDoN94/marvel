@@ -1,6 +1,6 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink } from "react-router-dom";
 
-import './appHeader.scss';
+import "./appHeader.scss";
 
 const AppHeader = () => {
   return (
@@ -14,23 +14,25 @@ const AppHeader = () => {
         <ul>
           <li>
             <NavLink
-              className={({isActive}) => isActive ? 'active' : ''}
-              to="/" >
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/"
+            >
               Characters
             </NavLink>
           </li>
           /
           <li>
             <NavLink
-              className={({isActive}) => isActive ? 'active' : ''}
-              to="/comics">
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/comics"
+            >
               Comics
             </NavLink>
           </li>
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
 
 export default AppHeader;
