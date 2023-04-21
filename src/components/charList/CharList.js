@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
@@ -54,7 +55,9 @@ const CharList = (props) => {
       }
 
       return (
-        <li
+        <motion.li
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: (i % 8) * 0.25 } }}
           className="char__item"
           tabIndex={0}
           ref={(el) => (itemRefs.current[i] = el)}
@@ -72,7 +75,7 @@ const CharList = (props) => {
         >
           <img src={item.thumbnail} alt={item.name} style={imgStyle} />
           <div className="char__name">{item.name}</div>
-        </li>
+        </motion.li>
       );
     });
 
@@ -87,7 +90,7 @@ const CharList = (props) => {
     <div className="char__list">
       {spinner}
       {errorMessage}
-      {items}
+      <AnimatePresence>{items}</AnimatePresence>
       <button
         className="button button__main button__long"
         disabled={newItemLoading || loading}
