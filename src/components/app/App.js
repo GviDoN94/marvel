@@ -8,6 +8,10 @@ import Spinner from "../spinner/Spinner";
 const Page404 = lazy(() => import("../pages/404"));
 const MainPage = lazy(() => import("../pages/MainPage"));
 const ComicsPage = lazy(() => import("../pages/ComicsPage"));
+const SinglePage = lazy(() => import("../pages/SinglePage"));
+const SingleCharacterLayout = lazy(() =>
+  import("../pages/singleCharacterLayout/SingleCharacterLayout")
+);
 
 const App = () => {
   const location = useLocation();
@@ -20,6 +24,15 @@ const App = () => {
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<MainPage />} />
               <Route path="/comics/*" element={<ComicsPage />} />
+              <Route
+                path="/characters/:id"
+                element={
+                  <SinglePage
+                    Component={SingleCharacterLayout}
+                    dataType="character"
+                  />
+                }
+              />
               <Route path="*" element={<Page404 />} />
             </Routes>
           </AnimatePresence>

@@ -26,7 +26,7 @@ const MainPage = () => {
         <ErrorBoundary>
           <CharList onCharSelected={onCharSelected} />
         </ErrorBoundary>
-        <div>
+        <div className="char__rigth">
           <ErrorBoundary>
             <CharInfo charId={selectedChar} />
           </ErrorBoundary>

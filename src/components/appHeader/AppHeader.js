@@ -1,8 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 import "./appHeader.scss";
 
 const AppHeader = () => {
+  const { pathname } = useLocation();
+  const styledLink = pathname.includes("/characters");
+
   return (
     <header className="app__header">
       <h1 className="app__title">
@@ -14,7 +17,9 @@ const AppHeader = () => {
         <ul>
           <li>
             <NavLink
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className={({ isActive }) =>
+                isActive || styledLink ? "active" : ""
+              }
               to="/"
             >
               Characters

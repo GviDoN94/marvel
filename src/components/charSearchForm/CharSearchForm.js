@@ -37,7 +37,10 @@ const CharSearchForm = () => {
       <div className="char__search-success">
         There is! Visit {char[0].name} page?
       </div>
-      <Link className="button button__secondary">
+      <Link
+        to={`/characters/${char[0].id}`}
+        className="button button__secondary"
+      >
         <div className="inner">To page</div>
       </Link>
     </div>
@@ -58,7 +61,7 @@ const CharSearchForm = () => {
         })}
         onSubmit={({ charName }) => updateChar(charName)}
       >
-        <Form>
+        <Form onChange={(e) => (!e.target.value ? setChar(null) : null)}>
           <label className="char__search-label" htmlFor="charName">
             Or find a character by name:
           </label>

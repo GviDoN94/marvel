@@ -7,7 +7,10 @@ import Spinner from "../spinner/Spinner";
 import motionParams from "../../services/motionParams";
 
 const ComicsList = lazy(() => import("../comicsList/ComicsList"));
-const SingleComicPage = lazy(() => import("./singleComicPage/SingleComicPage"));
+const SinglePage = lazy(() => import("./SinglePage"));
+const SingleComicLayout = lazy(() =>
+  import("./singleComicLayout/SingleComicLayout")
+);
 
 const ComicsPage = () => {
   return (
@@ -17,7 +20,12 @@ const ComicsPage = () => {
         <motion.div {...motionParams}>
           <Routes>
             <Route path="/" element={<ComicsList />} />
-            <Route path=":comicId" element={<SingleComicPage />} />
+            <Route
+              path=":id"
+              element={
+                <SinglePage Component={SingleComicLayout} dataType="comic" />
+              }
+            />
           </Routes>
         </motion.div>
       </Suspense>

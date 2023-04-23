@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import ErrorMessage from "../errorMessage/ErrorMessage";
 
+import motionParams from "../../services/motionParams";
+
 const Page404 = () => {
   return (
-    <div>
+    <motion.div {...motionParams}>
       <ErrorMessage />
       <p
         style={{
@@ -27,7 +30,7 @@ const Page404 = () => {
       >
         Back to main page
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
