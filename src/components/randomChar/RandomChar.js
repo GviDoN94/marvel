@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import Spinner from "../spinner/Spinner";
-import ErrorMessage from "../errorMessage/ErrorMessage";
-import useMarvelService from "../../services/MarvelService";
+import Spinner from '../spinner/Spinner';
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import useMarvelService from '../../services/MarvelService';
 
-import "./randomChar.scss";
-import mjolnir from "../../resources/img/mjolnir.png";
+import './randomChar.scss';
+import mjolnir from '../../resources/img/mjolnir.png';
 
 const RandomChar = () => {
   const [char, setChar] = useState({});
@@ -60,12 +60,12 @@ const RandomChar = () => {
 const View = ({ char }) => {
   const { name, description, thumbnail, homepage, wiki } = char;
 
-  let imageStyle = { objectFit: "cover" };
+  let imageStyle = { objectFit: 'cover' };
   if (
     thumbnail ===
-    "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
+    'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
   ) {
-    imageStyle = { objectFit: "fill" };
+    imageStyle = { objectFit: 'fill' };
   }
 
   return (

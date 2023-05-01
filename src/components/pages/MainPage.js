@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
-import ErrorBoundary from "../errorBoundary/ErrorBoundary";
-import RandomChar from "../randomChar/RandomChar";
-import CharList from "../charList/CharList";
-import CharInfo from "../charInfo/CharInfo";
-import CharSearchForm from "../charSearchForm/CharSearchForm";
+import ErrorBoundary from '../errorBoundary/ErrorBoundary';
+import RandomChar from '../randomChar/RandomChar';
+import CharList from '../charList/CharList';
+import CharInfo from '../charInfo/CharInfo';
+import CharSearchForm from '../charSearchForm/CharSearchForm';
 
-import motionParams from "../../services/motionParams";
-import decoration from "../../resources/img/vision.png";
+import motionParams from '../../services/motionParams';
+import decoration from '../../resources/img/vision.png';
 
 const MainPage = () => {
   const [selectedChar, setChar] = useState(null);

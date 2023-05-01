@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import Spinner from "../spinner/Spinner";
-import ErrorMessage from "../errorMessage/ErrorMessage";
-import useMarvelService from "../../services/MarvelService";
+import Spinner from '../spinner/Spinner';
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import useMarvelService from '../../services/MarvelService';
 
-import "./comicsList.scss";
+import './comicsList.scss';
 
 const ComicsList = () => {
   const [comicsList, setComicsList] = useState([]);
@@ -72,7 +72,7 @@ const ComicsList = () => {
       <button
         className="button button__main button__long"
         disabled={newItemLoading || loading}
-        style={{ display: comicsEnded ? "none" : "block" }}
+        style={{ display: comicsEnded ? 'none' : 'block' }}
         onClick={() => onRequest(offset)}
       >
         <div className="inner">load more</div>

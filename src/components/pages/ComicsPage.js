@@ -1,15 +1,15 @@
-import { lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
-import { motion } from "framer-motion";
+import { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-import AppBanner from "../appBanner/AppBanner";
-import Spinner from "../spinner/Spinner";
-import motionParams from "../../services/motionParams";
+import AppBanner from '../appBanner/AppBanner';
+import Spinner from '../spinner/Spinner';
+import motionParams from '../../services/motionParams';
 
-const ComicsList = lazy(() => import("../comicsList/ComicsList"));
-const SinglePage = lazy(() => import("./SinglePage"));
+const ComicsList = lazy(() => import('../comicsList/ComicsList'));
+const SinglePage = lazy(() => import('./SinglePage'));
 const SingleComicLayout = lazy(() =>
-  import("./singleComicLayout/SingleComicLayout")
+  import('./singleComicLayout/SingleComicLayout'),
 );
 
 const ComicsPage = () => {

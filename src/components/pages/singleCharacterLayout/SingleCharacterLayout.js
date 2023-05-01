@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import AppBanner from "../../appBanner/AppBanner";
+import AppBanner from '../../appBanner/AppBanner';
 
-import "./singleCharacterLayout.scss";
+import './singleCharacterLayout.scss';
 
 const SingleCharacterLayout = ({ data }) => {
   const { name, description, thumbnail } = data;

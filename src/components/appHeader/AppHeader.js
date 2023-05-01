@@ -1,10 +1,10 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
-import "./appHeader.scss";
+import './appHeader.scss';
 
 const AppHeader = () => {
   const { pathname } = useLocation();
-  const styledLink = pathname.includes("/characters");
+  const styledLink = pathname.includes('/characters');
 
   return (
     <header className="app__header">
@@ -18,7 +18,7 @@ const AppHeader = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive || styledLink ? "active" : ""
+                isActive || styledLink ? 'active' : ''
               }
               to="/"
             >
@@ -28,7 +28,7 @@ const AppHeader = () => {
           /
           <li>
             <NavLink
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className={({ isActive }) => (isActive ? 'active' : '')}
               to="/comics"
             >
               Comics

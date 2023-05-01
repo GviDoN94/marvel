@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback } from 'react';
 
 const useHttp = () => {
   const [loading, setLoading] = useState(false);
@@ -7,9 +7,9 @@ const useHttp = () => {
   const request = useCallback(
     async (
       url,
-      method = "GET",
+      method = 'GET',
       body = null,
-      headers = { "Content-type": "application/json" }
+      headers = { 'Content-type': 'application/json' },
     ) => {
       setLoading(true);
 
@@ -30,7 +30,7 @@ const useHttp = () => {
         throw e;
       }
     },
-    []
+    [],
   );
 
   const clearError = useCallback(() => setError(null), []);

@@ -1,12 +1,12 @@
-import { useState, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import Spinner from "../spinner/Spinner";
-import ErrorMessage from "../errorMessage/ErrorMessage";
-import useMarvelService from "../../services/MarvelService";
+import Spinner from '../spinner/Spinner';
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import useMarvelService from '../../services/MarvelService';
 
-import "./charList.scss";
+import './charList.scss';
 
 const CharList = (props) => {
   const [charList, setCharList] = useState([]);
@@ -38,20 +38,20 @@ const CharList = (props) => {
 
   const focusOnItem = (id) => {
     itemRefs.current.forEach((item) =>
-      item.classList.remove("char__item_selected")
+      item.classList.remove('char__item_selected'),
     );
-    itemRefs.current[id].classList.add("char__item_selected");
+    itemRefs.current[id].classList.add('char__item_selected');
     itemRefs.current[id].focus();
   };
 
   const renderItems = (arr) => {
     const items = arr.map((item, i) => {
-      let imgStyle = { objectFit: "cover" };
+      let imgStyle = { objectFit: 'cover' };
       if (
         item.thumbnail ===
-        "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
+        'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
       ) {
-        imgStyle = { objectFit: "fill" };
+        imgStyle = { objectFit: 'fill' };
       }
 
       return (
@@ -67,7 +67,7 @@ const CharList = (props) => {
             focusOnItem(i);
           }}
           onKeyDown={(e) => {
-            if (e.key === " " || e.key === "Enter") {
+            if (e.key === ' ' || e.key === 'Enter') {
               props.onCharSelected(item.id);
               focusOnItem(i);
             }
@@ -94,7 +94,7 @@ const CharList = (props) => {
       <button
         className="button button__main button__long"
         disabled={newItemLoading || loading}
-        style={{ display: charEnded ? "none" : "block" }}
+        style={{ display: charEnded ? 'none' : 'block' }}
         onClick={() => onRequest(offset)}
       >
         <div className="inner">load more</div>

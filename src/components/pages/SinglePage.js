@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { motion } from "framer-motion";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-import Spinner from "../spinner/Spinner";
-import ErrorMessage from "../errorMessage/ErrorMessage";
-import useMarvelService from "../../services/MarvelService";
+import Spinner from '../spinner/Spinner';
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import useMarvelService from '../../services/MarvelService';
 
-import motionParams from "../../services/motionParams";
+import motionParams from '../../services/motionParams';
 
 const SinglePage = ({ Component, dataType }) => {
   const { id } = useParams();
@@ -24,10 +24,10 @@ const SinglePage = ({ Component, dataType }) => {
     clearError();
 
     switch (dataType) {
-      case "comic":
+      case 'comic':
         getComic(id).then(onDataLoaded);
         break;
-      case "character":
+      case 'character':
         getCharacter(id).then(onDataLoaded);
         break;
       default:
