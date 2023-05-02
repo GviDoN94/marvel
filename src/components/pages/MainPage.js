@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 
 import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 import RandomChar from '../randomChar/RandomChar';
@@ -18,25 +19,31 @@ const MainPage = () => {
   };
 
   return (
-    <motion.div {...motionParams}>
-      <ErrorBoundary>
-        <RandomChar />
-      </ErrorBoundary>
-      <div className="char__content">
+    <>
+      <Helmet>
+        <meta name="description" content="Marvel information portal" />
+        <title>Marvel information portal</title>
+      </Helmet>
+      <motion.div {...motionParams}>
         <ErrorBoundary>
-          <CharList onCharSelected={onCharSelected} />
+          <RandomChar />
         </ErrorBoundary>
-        <div className="char__rigth">
+        <div className="char__content">
           <ErrorBoundary>
-            <CharInfo charId={selectedChar} />
+            <CharList onCharSelected={onCharSelected} />
           </ErrorBoundary>
-          <ErrorBoundary>
-            <CharSearchForm />
-          </ErrorBoundary>
+          <div className="char__rigth">
+            <ErrorBoundary>
+              <CharInfo charId={selectedChar} />
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <CharSearchForm />
+            </ErrorBoundary>
+          </div>
         </div>
-      </div>
-      <img className="bg-decoration" src={decoration} alt="vision" />
-    </motion.div>
+        <img className="bg-decoration" src={decoration} alt="vision" />
+      </motion.div>
+    </>
   );
 };
 

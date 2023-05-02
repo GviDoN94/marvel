@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import AppBanner from '../../appBanner/AppBanner';
 
@@ -9,6 +10,10 @@ const SingleCharacterLayout = ({ data }) => {
 
   return (
     <>
+      <Helmet>
+        <meta name="description" content={`${name} page`} />
+        <title>{name}</title>
+      </Helmet>
       <AppBanner />
       <div className="single-character">
         <img src={thumbnail} alt={name} className="single-character__img" />

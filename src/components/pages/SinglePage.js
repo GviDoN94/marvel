@@ -13,7 +13,6 @@ const SinglePage = ({ Component, dataType }) => {
   const [data, setData] = useState(null);
   const { loading, error, getCharacter, getComic, clearError } =
     useMarvelService();
-  console.log(useParams());
 
   useEffect(() => {
     updateData();

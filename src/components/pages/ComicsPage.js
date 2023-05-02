@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 
 import AppBanner from '../appBanner/AppBanner';
 import Spinner from '../spinner/Spinner';
@@ -15,6 +16,10 @@ const SingleComicLayout = lazy(() =>
 const ComicsPage = () => {
   return (
     <>
+      <Helmet>
+        <meta name="description" content="Page with list of our comics" />
+        <title>Comics page</title>
+      </Helmet>
       <AppBanner />
       <Suspense fallback={<Spinner />}>
         <motion.div {...motionParams}>
