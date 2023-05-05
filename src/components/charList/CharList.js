@@ -57,7 +57,7 @@ const CharList = (props) => {
       return (
         <motion.li
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: (i % 8) * 0.25 } }}
+          animate={{ opacity: 1, transition: { delay: (i % 9) * 0.25 } }}
           className="char__item"
           tabIndex={0}
           ref={(el) => (itemRefs.current[i] = el)}

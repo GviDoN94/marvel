@@ -2,16 +2,15 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import Spinner from '../spinner/Spinner';
-import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
+import setContent from '../../utils/setContent';
 
 import motionParams from '../../services/motionParams';
 
 const SinglePage = ({ Component, dataType }) => {
   const { id } = useParams();
   const [data, setData] = useState(null);
-  const { loading, error, getCharacter, getComic, clearError } =
+  const { process, setProcess, getCharacter, getComic, clearError } =
     useMarvelService();
 
   useEffect(() => {
@@ -24,10 +23,14 @@ const SinglePage = ({ Component, dataType }) => {
 
     switch (dataType) {
       case 'comic':
-        getComic(id).then(onDataLoaded);
+        getComic(id)
+          .then(onDataLoaded)
+          .then(() => setProcess('confirmed'));
         break;
       case 'character':
-        getCharacter(id).then(onDataLoaded);
+        getCharacter(id)
+          .then(onDataLoaded)
+          .then(() => setProcess('confirmed'));
         break;
       default:
         break;
@@ -38,17 +41,9 @@ const SinglePage = ({ Component, dataType }) => {
     setData(data);
   };
 
-  const errorMessage = error ? <ErrorMessage /> : null;
-  const spinner = loading ? <Spinner /> : null;
-  const content = !(loading || error || !data) ? (
-    <Component data={data} />
-  ) : null;
-
   return (
     <motion.div {...motionParams}>
-      {errorMessage}
-      {spinner}
-      {content}
+      {setContent(process, Component, data)}
     </motion.div>
   );
 };

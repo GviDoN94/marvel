@@ -20,9 +20,9 @@ const ComicsPage = () => {
         <meta name="description" content="Page with list of our comics" />
         <title>Comics page</title>
       </Helmet>
-      <AppBanner />
       <Suspense fallback={<Spinner />}>
         <motion.div {...motionParams}>
+          <AppBanner />
           <Routes>
             <Route path="/" element={<ComicsList />} />
             <Route

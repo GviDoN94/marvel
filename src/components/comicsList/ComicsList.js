@@ -39,7 +39,7 @@ const ComicsList = () => {
       return (
         <motion.li
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: (i % 9) * 0.25 } }}
+          animate={{ opacity: 1, transition: { delay: (i % 8) * 0.25 } }}
           className="comics__item"
           key={i}
         >
