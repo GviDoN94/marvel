@@ -1,4 +1,4 @@
-# You can watch it [here](https://marvel.gvidon94.ru/)
+# You can look at it [here](https://marvel.gvidon94.ru/)
 
 ## Install the necessary programs
 
